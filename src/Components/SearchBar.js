@@ -1,4 +1,6 @@
 import React,{useState} from "react";
+import { Button,Input} from 'reactstrap';
+
 import Youtube from "../apis/Youtube";
 function SearchBar({addContent,selectVideo}){
     let [searchTerm,setSearchTerm]=useState('');
@@ -19,13 +21,14 @@ function SearchBar({addContent,selectVideo}){
     }
     return(
         <div>
-            <input
+            <Input
             type="text"
             placeholder="Search"
             onChange={(e)=>setSearchTerm(e.target.value)}
             value={searchTerm}
             />
-            <button onClick={getVideos}>Search</button>
+            {/* <button onClick={getVideos}>Search</button> */}
+            <Button onClick={getVideos}>Search</Button>
         </div>
     )
 }
