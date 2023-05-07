@@ -1,16 +1,21 @@
 import React,{useState} from "react";
 import Youtube from "../apis/Youtube";
-function SearchBar(addContent){
+function SearchBar({addContent,selectVideo}){
     let [searchTerm,setSearchTerm]=useState('');
     const getVideos=()=>{
         Youtube.get("/search",{
             params:{
                 q:searchTerm,
-                type:'video'
+                type:'video',
             }
         })
-        .then(res=>console.log(res))
-        .catch()
+        .then(res=>
+            {
+                addContent(res.data.items)
+                selectVideo(res.data.items[0])
+                return; 
+            })
+        .catch(err=>console.log(err))
     }
     return(
         <div>
