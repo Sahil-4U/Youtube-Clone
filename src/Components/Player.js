@@ -1,3 +1,4 @@
+import { Container } from "reactstrap";
 
 
 const Player=({video})=>{
@@ -7,9 +8,13 @@ const Player=({video})=>{
     let videoId=video.id.videoId;
     let videoSrc=`https://www.youtube.com/embed/${videoId}`;
     return(
-    <div>
-        <iframe width="560" height="315" src={videoSrc} title="YouTube video player"></iframe>
-    </div>
+    <Container
+    className="bg-light border"
+    width="lg"
+    
+    >
+        <iframe width="560" height="315" src={videoSrc} title="YouTube video player" ></iframe>
+    </Container>
     )
 }
 

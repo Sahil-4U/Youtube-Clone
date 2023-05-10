@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { Button,Input} from 'reactstrap';
+import { Button,Input, InputGroup} from 'reactstrap';
 
 import Youtube from "../apis/Youtube";
 function SearchBar({addContent,selectVideo}){
@@ -28,7 +28,11 @@ function SearchBar({addContent,selectVideo}){
             value={searchTerm}
             />
             {/* <button onClick={getVideos}>Search</button> */}
-            <Button onClick={getVideos}>Search</Button>
+            <Button 
+            color="primary"
+            outline
+            size="lg"
+            onClick={getVideos}>Search</Button>
         </div>
     )
 }
